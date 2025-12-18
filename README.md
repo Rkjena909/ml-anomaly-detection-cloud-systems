@@ -43,6 +43,11 @@ A controlled synthetic dataset was created to simulate cloud cost behavior with 
 ### 2. Real Cloud System Data
 Real AWS CloudWatch CPU utilization data exhibits noise, non-stationarity, and regime changes. In this setting, Z-score fails to detect many anomalous behaviors, while Isolation Forest using contextual features demonstrates improved robustness.
 
+### 3. Forecast-Based Anomaly Detection
+A forecasting-based baseline was implemented to model expected system behavior and detect anomalies as large residuals between observed and predicted values. Using a rolling-window moving average forecast, anomalies are identified via high-quantile thresholding on residual magnitude.
+
+This approach adapts to local trends and provides an interpretable middle-ground between global statistical thresholds and ML-based Isolation Forest, particularly under non-stationary cloud workloads.
+
 ---
 
 ## Key Findings
