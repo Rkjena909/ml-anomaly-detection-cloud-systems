@@ -55,6 +55,10 @@
         - Real-world cloud systems exhibit non-stationarity and contextual anomalies
         - ML-based methods incorporating local context provide more reliable detection under realistic workloads
 
+    - Forecast-Based Anomaly Detection (Residuals)
+        - We evaluate a forecasting-based detector that models expected behavior and flags anomalies as large residuals between observed and predicted values. Using a rolling-window moving average baseline, we compute residuals and identify anomalous points via a high-quantile threshold on absolute residual magnitude.
+        - Unlike Z-score, which relies on a single global distribution, forecasting-based detection adapts to local behavior and can surface contextual deviations during non-stationary periods. This provides an interpretable middle-ground between simple statistical thresholds and ML-based Isolation Forest.
+
 
 ## 6. Conclusion & Future Work
     - This study demonstrates that while simple statistical anomaly detection methods are effective under idealized assumptions, real-world cloud and data systems require models that adapt to evolving behavior. Context-aware machine learning approaches such as Isolation Forest provide increased robustness under non-stationary workloads.

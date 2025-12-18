@@ -41,3 +41,16 @@ Format:
         - Analyzed tradeoffs and limitations of statistical vs ML-based methods
     - Next steps:
         - Extend to more realistic datasets and contextual anomalies
+---------------------------------------------------------------------------------
+- Date: 2025-12-18
+  - Dataset:
+        - NAB realAWSCloudwatch EC2 CPU utilization
+  - What was completed:
+        - Implemented forecast-based anomaly detection using moving-average forecasting
+        - Computed residuals and flagged anomalies using a 99.5th percentile threshold
+        - Saved forecast residual dataset and visualization artifact
+  - Artifacts generated:
+        - data_processed/aws_cloudwatch/cpu_forecast_residuals.csv
+        - results/aws_cloudwatch/forecast_residual_anomalies.png
+  - Next steps:
+        - Summarize tradeoffs across Z-score vs Isolation Forest vs Forecasting
